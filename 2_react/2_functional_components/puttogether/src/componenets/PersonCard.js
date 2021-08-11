@@ -8,7 +8,9 @@ const PersonCard = (props) => {
             <h1>{ lastName }, { firstName }</h1>
             <p>Age: { birthAge }</p>
             <p>Hair Color: { hairColor}</p>
-            <button onClick={ (e) => setBirthAge(birthAge + 1)}>Birthday Button for { firstName } { lastName }</button>
+            <button onClick={ (e) => {
+                console.log(birthAge);
+                setBirthAge(birthAge + 1)} }>Birthday Button for { firstName } { lastName }</button>
         </div>
     )
 }
