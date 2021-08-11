@@ -7,11 +7,10 @@ const PersonCard = (props) => {
             <h1>{ lastName }, {firstName }</h1>
             <p>Age: { age }</p>
             <p>Hair Color: { hairColor}</p>
-            <p>hello</p>
+    
         </div>
     )
 }
 
 export default PersonCard;
 
-//test
