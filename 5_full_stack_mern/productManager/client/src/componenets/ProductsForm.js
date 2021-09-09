@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import { number } from 'prop-types';
 
-const ProductsForm = () => {
+
+const ProductsForm = (props) => {
     const [title, setTitle] = useState("");
-    const [price, setPrice] = useState(Number);
+    const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
+    const {product, setProduct} = props;
 
     const onSubmitHandler = e => {
         
@@ -16,7 +17,11 @@ const ProductsForm = () => {
             description
 
         })
-            .then(res=>console.log(res))
+            .then(res=>{
+                setProduct([...product, 
+                    res.data
+                ])
+                console.log(res)})
             .catch(err=>console.log(err))
     }
     
