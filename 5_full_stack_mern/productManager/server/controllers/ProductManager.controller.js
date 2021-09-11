@@ -29,3 +29,15 @@ module.exports.createProductManager = (request, response) => {
         .then(newProduct => response.json(newProduct))
         .catch(err => response.json(err));
 }
+
+module.exports.updateProducts = (request, response) => {
+    ProductManager.findOneAndUpdate({_id: request.params.id}, request.body, {new:true})
+        .then(updatedProduct => response.json(updatedProduct))
+        .catch(err => response.json(err))
+}
+
+module.exports.deleteProduct = (request, response) => {
+    ProductManager.deleteOne({_id: request.params.id})
+        .then(deleteConfirmation => response.json(deleteConfirmation))
+        .catch(err => response.json(err))
+}
