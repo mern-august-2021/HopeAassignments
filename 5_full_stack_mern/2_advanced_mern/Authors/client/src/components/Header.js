@@ -1,0 +1,22 @@
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
+import {Link, navigate} from '@reach/router';
+
+const Header = (props) => {
+    
+
+
+
+
+
+    return(
+        <div style={{boarder: "5px black"}}>
+            <ul style={{display: "flex", justifyContent:"space-around", listStyle:"none"}}>
+                <li><Link style={{textDecoration:"none", fontSize:"20px", color: "purple"}} to="/author">Home</Link></li>
+                <li><Link style={{textDecoration:"none", fontSize:"20px", color: "purple"}} to="/author/new">Add New Author</Link></li>
+            </ul>
+        </div>
+    )
+}
+
+export default Header;
